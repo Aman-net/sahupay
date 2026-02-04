@@ -2,7 +2,10 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import {createMaterialBottomTabNavigator} from 'react-native-paper/react-navigation';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import HomeNavigator from '../HomeNavigator';
+import HomeNavigator from './HomeNavigator';
+import AnalyticsNavigator from './AnalyticsNavigator';
+import TransactionNavigator from './TransactionNavigator';
+import CartNavigator from './CartNavigator';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -19,11 +22,41 @@ function TabNavigator() {
         }}
       />
       <Tab.Screen
-        name="Settings"
-        component={SettingsScreen}
+        name="Tranactions"
+        component={TransactionNavigator}
         options={{
           tabBarIcon: ({color}) => (
-            <MaterialCommunityIcons name="cog" color={color} size={26} />
+            <MaterialCommunityIcons
+              name={'account-details-outline'}
+              color={color}
+              size={26}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Analytics"
+        component={AnalyticsNavigator}
+        options={{
+          tabBarIcon: ({color}) => (
+            <MaterialCommunityIcons
+              name={'google-analytics'}
+              color={color}
+              size={26}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Cart"
+        component={CartNavigator}
+        options={{
+          tabBarIcon: ({color}) => (
+            <MaterialCommunityIcons
+              name={'cart-variant'}
+              color={color}
+              size={26}
+            />
           ),
         }}
       />
@@ -32,11 +65,3 @@ function TabNavigator() {
 }
 
 export default TabNavigator;
-
-function SettingsScreen() {
-  return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>Settings!</Text>
-    </View>
-  );
-}
