@@ -1,5 +1,4 @@
 import React from 'react';
-import {View, Text} from 'react-native';
 import {createMaterialBottomTabNavigator} from 'react-native-paper/react-navigation';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import HomeNavigator from './HomeNavigator';
@@ -22,7 +21,7 @@ function TabNavigator() {
         }}
       />
       <Tab.Screen
-        name="Tranactions"
+        name="Transactions"
         component={TransactionNavigator}
         options={{
           tabBarIcon: ({color}) => (

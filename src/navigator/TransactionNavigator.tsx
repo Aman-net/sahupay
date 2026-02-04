@@ -1,10 +1,6 @@
-import {View, Text} from 'react-native';
 import React from 'react';
+import TransactionsScreen from '../home/TransactionsScreen';
 
 export default function TransactionNavigator() {
-  return (
-    <View>
-      <Text>TransactionNavigator</Text>
-    </View>
-  );
+  return <TransactionsScreen />;
 }
