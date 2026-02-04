@@ -1,7 +1,7 @@
-import {View, Text, ScrollView, TouchableHighlight} from 'react-native';
+import {View, Text, ScrollView} from 'react-native';
 import React from 'react';
 import {group} from '../data/dummyData';
-import {Button, Card, IconButton} from 'react-native-paper';
+import {Card, IconButton} from 'react-native-paper';
 
 export default function GroupScreen({navigation}: any) {
   return (
@@ -34,7 +34,12 @@ const GroupCard = ({navigation, item}: any) => {
       }}>
       <Card
         style={{backgroundColor: 'lightpink', flexGrow: 1}}
-        onPress={() => navigation.navigate('Tabs', item)}>
+        onPress={() =>
+          navigation.navigate('Records', {
+            groupId: item.id,
+            groupName: item.businessName,
+          })
+        }>
         <Card.Title title={item.displayName} subtitle={item.businessName} />
         <Card.Content>
           <Text>No. Of Records: {item.noOfRecords}</Text>
